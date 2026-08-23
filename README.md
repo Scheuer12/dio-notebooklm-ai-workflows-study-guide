@@ -1,4 +1,4 @@
-# Miniguia de Estudos com NotebookLM: IA Aplicada a Automacao de Processos
+# Miniguia de Estudos com NotebookLM: Estruturacao de AI Agents and Companies
 
 Projeto de fim de modulo da DIO usando o NotebookLM como ferramenta de aprendizagem ativa, curadoria de fontes e organizacao do conhecimento.
 
@@ -6,299 +6,362 @@ Projeto de fim de modulo da DIO usando o NotebookLM como ferramenta de aprendiza
 
 O tema escolhido para este caderno tematico foi:
 
-> Como usar inteligencia artificial generativa para transformar processos confusos em fluxos estruturados, automacoes praticas e saidas confiaveis.
+> Como estruturar AI Agents e AI Companies: agentes especializados, ferramentas, workflows, guardrails, memoria, orquestracao e operacao continua.
 
-Escolhi esse tema porque ele conecta tres areas que aparecem com frequencia em projetos reais de tecnologia:
+Escolhi esse tema porque ele conecta inteligencia artificial aplicada, arquitetura de sistemas, automacao, produto, operacoes e tomada de decisao. A ideia nao e estudar IA generativa de forma generica, mas entender como transformar agentes em uma estrutura funcional: agentes com papeis claros, ferramentas adequadas, limites de autonomia, criterio de validacao e capacidade de evoluir com o tempo.
 
-- entendimento de processos de negocio;
-- engenharia de prompts e curadoria de contexto;
-- criacao de saidas estruturadas para automacao, analise e tomada de decisao.
-
-O objetivo do estudo nao foi apenas "aprender sobre IA", mas entender como a IA pode ser usada com criterio em cenarios praticos: quando usar prompt, quando usar regra deterministica, como reduzir respostas genericas, como validar saidas e como organizar conhecimento de forma reutilizavel.
+Neste projeto, o termo **AI Company** e usado como uma metafora pratica: uma organizacao composta por agentes especializados que trabalham como departamentos, squads ou funcoes de negocio. Cada agente precisa ter uma responsabilidade clara, entradas e saidas definidas, ferramentas, memoria, criterios de qualidade e pontos de escalonamento humano.
 
 ### Objetivos de aprendizagem
 
-- Entender como estruturar prompts melhores para tarefas de analise e automacao.
-- Estudar boas praticas para obter respostas mais consistentes de LLMs.
-- Compreender o papel de saidas estruturadas como JSON em sistemas de IA.
-- Diferenciar uso experimental de IA de uso minimamente confiavel em processos reais.
-- Criar um miniguia reutilizavel para futuras revisoes sobre IA aplicada a processos.
+- Entender o que caracteriza um AI Agent na pratica.
+- Diferenciar agente, workflow, ferramenta, automacao e multi-agent system.
+- Estudar padroes de orquestracao como manager, handoffs e workflows explicitos.
+- Compreender guardrails, validacao, memoria, observabilidade e limites de autonomia.
+- Criar um miniguia para consultar rapidamente ao desenhar agentes e AI Companies.
+- Documentar prompts reutilizaveis para tirar duvidas, revisar arquiteturas e manter o conhecimento atualizado.
 
 ## 2. Curadoria de fontes
 
-Foram selecionadas fontes abertas, oficiais ou tecnicamente confiaveis, priorizando materiais que explicam prompt engineering, NotebookLM, outputs estruturados e gestao de riscos em IA.
+Foram selecionadas fontes abertas, oficiais ou tecnicamente confiaveis, priorizando materiais recentes sobre agentes, orquestracao, workflows e uso do NotebookLM.
 
 | Fonte | Tipo | Motivo da escolha |
 | --- | --- | --- |
-| [Google NotebookLM Help - Learn about NotebookLM](https://support.google.com/notebooklm/answer/16164461?hl=en) | Documentacao oficial | Explica o papel do NotebookLM como assistente de pesquisa baseado em fontes. |
-| [Google NotebookLM Help - Add or discover new sources](https://support.google.com/notebooklm/answer/16215270?hl=en-GB) | Documentacao oficial | Mostra tipos de fontes aceitos, limites e boas praticas de uso. |
-| [Google Cloud - Prompt design strategies](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/prompt-design-strategies) | Guia tecnico oficial | Apresenta estrategias de prompt design, estrutura, exemplos, contexto e iteracao. |
-| [OpenAI - Introducing Structured Outputs in the API](https://openai.com/index/introducing-structured-outputs-in-the-api/) | Artigo tecnico oficial | Explica o valor de outputs estruturados aderentes a schemas, especialmente JSON. |
-| [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) | Framework publico | Ajuda a pensar riscos, confiabilidade, governanca e uso responsavel de IA. |
+| [Google NotebookLM Help - Learn about NotebookLM](https://support.google.com/notebooklm/answer/16164461?hl=en) | Documentacao oficial | Explica como o NotebookLM funciona como assistente de pesquisa baseado em fontes. |
+| [OpenAI Agents SDK - Agents](https://openai.github.io/openai-agents-python/agents/) | Documentacao oficial | Define agentes como LLMs com instrucoes, ferramentas, handoffs, guardrails e outputs estruturados. |
+| [OpenAI Agents SDK - Guardrails](https://openai.github.io/openai-agents-python/guardrails/) | Documentacao oficial | Ajuda a entender validacao de entrada, saida e uso de ferramentas. |
+| [Google Agent Development Kit - Get started](https://github.com/google/adk-docs/blob/main/docs/get-started/index.md) | Documentacao oficial/open source | Mostra a proposta de construir, gerenciar, avaliar e implantar agentes em diferentes linguagens. |
+| [Microsoft Agent Framework - Overview](https://learn.microsoft.com/en-us/agent-framework/overview/) | Documentacao oficial | Traz uma distincao importante entre agentes e workflows e orienta quando usar cada abordagem. |
+| [Microsoft AutoGen - Documentation](https://microsoft.github.io/autogen/dev/) | Documentacao tecnica | Referencia util para sistemas single-agent e multi-agent, com Core, AgentChat, Extensions e MCP. |
 
 ## 3. Metodo usado no NotebookLM
 
-O processo foi dividido em quatro etapas:
+O processo de estudo foi dividido em cinco etapas:
 
-1. Upload e organizacao das fontes no NotebookLM.
-2. Perguntas exploratorias para entender os conceitos principais.
-3. Perguntas comparativas e aplicadas para conectar os conceitos a processos reais.
-4. Consolidacao em um miniguia de estudo com resumo, glossario e prompts reutilizaveis.
+1. Upload das fontes no NotebookLM.
+2. Perguntas exploratorias para entender os conceitos centrais.
+3. Perguntas comparativas para diferenciar agentes, workflows, ferramentas e empresas de agentes.
+4. Perguntas aplicadas para desenhar uma AI Company funcional.
+5. Consolidacao em um miniguia com resumo, glossario, prompts reutilizaveis e checklist de arquitetura.
 
-A escolha das perguntas seguiu uma logica simples: comecar pelo entendimento geral, depois buscar aplicacao pratica, depois testar limites e finalmente consolidar o conhecimento.
+O criterio principal foi estudar agentes como sistemas reais, nao como personagens de prompt. Um agente util precisa executar trabalho, lidar com contexto, chamar ferramentas, produzir saidas verificaveis e respeitar limites de autonomia.
 
 ## 4. Engenharia de prompts e cicatrizes
 
-Esta etapa documenta os prompts testados, o objetivo de cada um, o resultado observado e os ajustes feitos. O foco aqui foi registrar o raciocinio por tras das respostas, nao apenas o resultado final.
+Esta etapa registra os prompts testados, as dificuldades encontradas e os ajustes feitos para melhorar a qualidade das respostas.
 
-### Prompt 1 - Visao geral inicial
+### Prompt 1 - Entendimento inicial
 
 ```text
-Com base nas fontes selecionadas, explique em linguagem simples como o NotebookLM pode ser usado para estudar IA aplicada a automacao de processos. Organize a resposta em: conceitos principais, aplicacoes praticas e cuidados.
+Com base nas fontes selecionadas, explique o que e um AI Agent na pratica. Diferencie agente, chatbot, workflow, automacao e ferramenta.
 ```
 
 Resultado observado:
 
-- A resposta foi clara, mas ainda generica.
-- O NotebookLM explicou bem o papel das fontes e a ideia de IA como apoio ao estudo.
-- Faltou conectar melhor o tema com automacao real e outputs estruturados.
+- A resposta explicou bem os conceitos, mas ainda ficou muito abstrata.
+- O NotebookLM trouxe definicoes corretas, mas pouco conectadas a arquitetura de sistemas.
 
 Ajuste feito:
 
 ```text
-Agora aprofunde a resposta com foco em uso pratico: considere um profissional que precisa transformar descricoes confusas de processos em fluxos, dados estruturados e decisoes operacionais. Use exemplos concretos.
+Refaca a resposta como se eu fosse desenhar uma pequena empresa composta por agentes de IA. Para cada conceito, mostre: papel, exemplo, entrada, saida e risco principal.
 ```
 
 Cicatriz:
 
-O primeiro prompt estava correto, mas amplo demais. A melhoria veio quando o contexto de uso foi explicitado.
+Quando o tema e arquitetura de agentes, pedir apenas definicoes gera uma resposta limpa, mas pouco acionavel. Pedir entrada, saida e risco transforma o conteudo em material de projeto.
 
-### Prompt 2 - Comparacao entre prompt e saida estruturada
+### Prompt 2 - Agente versus workflow
 
 ```text
-Compare prompt engineering tradicional com o uso de saidas estruturadas, como JSON aderente a schema. Explique quando cada abordagem e suficiente e quando ela passa a ser limitada.
+Compare quando devo usar um agente autonomo e quando devo usar um workflow explicito. Use criterios praticos para tomada de decisao.
 ```
 
 Resultado observado:
 
-- A resposta diferenciou bem texto livre de saida estruturada.
-- A IA destacou que prompts ajudam, mas nao garantem por si so consistencia total.
-- O material da OpenAI sobre Structured Outputs ajudou a reforcar a ideia de schema.
+- A resposta trouxe uma boa diferenca entre tarefas abertas e processos bem definidos.
+- Faltou uma matriz de decisao reutilizavel.
 
 Ajuste feito:
 
 ```text
-Inclua uma tabela comparando: uso ideal, risco principal, exemplo pratico e como validar o resultado.
+Transforme a comparacao em uma matriz com: tipo de tarefa, nivel de previsibilidade, autonomia necessaria, risco, exemplo e recomendacao de arquitetura.
 ```
 
 Cicatriz:
 
-A resposta original era boa para leitura, mas a tabela deixou o conhecimento mais facil de revisar e aplicar.
+Agentes sao atraentes, mas nem tudo deveria virar agente. Em tarefas previsiveis, workflows explicitos podem ser mais baratos, auditaveis e seguros.
 
-### Prompt 3 - Aplicacao em processos de negocio
+### Prompt 3 - Estrutura de uma AI Company
 
 ```text
-Imagine que um usuario descreve por voz um processo operacional confuso. Com base nas fontes, proponha um fluxo de IA para transformar essa descricao em dados estruturados, analise preliminar e proximos passos.
+Desenhe uma AI Company simples composta por agentes especializados. Inclua agentes, responsabilidades, ferramentas, memoria, handoffs e pontos de intervencao humana.
 ```
 
 Resultado observado:
 
-- O fluxo sugerido fazia sentido, mas pulava validacoes importantes.
-- A IA assumiu que o output estaria correto se o prompt fosse bem escrito.
+- A primeira resposta criou muitos agentes.
+- A estrutura ficou interessante, mas complexa demais para um MVP.
 
 Ajuste feito:
 
 ```text
-Refaca o fluxo incluindo pontos de validacao humana, checagem de campos obrigatorios, tratamento de incertezas e separacao entre fatos extraidos e inferencias da IA.
+Reduza para uma versao MVP com no maximo 5 agentes. Cada agente deve ter uma responsabilidade clara, uma entrada principal, uma saida principal e um criterio de sucesso.
 ```
 
 Cicatriz:
 
-Para aplicacoes reais, nao basta gerar uma resposta bonita. E necessario registrar incertezas, validar dados e separar extracao de interpretacao.
+Multi-agent systems podem virar complexidade decorativa. Uma AI Company precisa comecar pequena, com agentes realmente necessarios.
 
-### Prompt 4 - Riscos e confiabilidade
+### Prompt 4 - Guardrails e validacao
 
 ```text
-Usando as fontes sobre risco e boas praticas, liste os principais riscos de usar IA generativa em automacao de processos e proponha mitigacoes praticas.
+Quais guardrails uma AI Company precisa para operar com seguranca? Considere entrada do usuario, saida do agente, chamada de ferramentas e decisoes que exigem aprovacao humana.
 ```
 
 Resultado observado:
 
-- A resposta trouxe riscos como alucinacao, privacidade e uso indevido.
-- O conteudo ficou correto, mas um pouco abstrato.
+- A resposta trouxe riscos importantes, mas misturou politicas, validacoes tecnicas e boas praticas.
 
 Ajuste feito:
 
 ```text
-Reorganize os riscos em uma tabela operacional com: risco, exemplo em processo real, impacto possivel e mitigacao pratica.
+Organize os guardrails em quatro categorias: input, output, tool-use e human approval. Para cada uma, explique o que validar, quando bloquear e quando escalar para humano.
 ```
 
 Cicatriz:
 
-Quando o tema envolve risco, a resposta precisa sair do plano conceitual e virar checklist operacional.
+Guardrails precisam estar ligados a pontos especificos do fluxo. Falar "tenha seguranca" nao basta; e necessario dizer onde validar e o que acontece quando algo falha.
 
-### Prompt 5 - Consolidacao do miniguia
+### Prompt 5 - Atualizacao continua
 
 ```text
-Consolide os aprendizados em um miniguia de estudo para revisao futura. Inclua resumo estruturado, glossario e prompts reutilizaveis para estudar ou aplicar o tema em novos projetos.
+Como posso usar este caderno no NotebookLM para me manter atualizado sobre AI Agents e tirar duvidas rapidamente em novos projetos?
 ```
 
 Resultado observado:
 
-- A consolidacao foi util, mas misturou resumo, opiniao e recomendacao.
+- A resposta sugeriu revisoes periodicas, mas sem um processo concreto.
 
 Ajuste feito:
 
 ```text
-Refaca separando claramente: fatos retirados das fontes, inferencias praticas e recomendacoes de uso. Mantenha linguagem objetiva.
+Crie um processo de manutencao do caderno com frequencia, tipos de fontes a adicionar, perguntas de revisao, criterios para substituir fontes antigas e formato de changelog.
 ```
 
 Cicatriz:
 
-Separar fatos, inferencias e recomendacoes melhora muito a confiabilidade do material final.
+Um caderno de estudo tecnico perde valor se nao houver manutencao. Para temas como AI Agents, a atualizacao precisa ser parte do sistema.
 
 ## 5. Miniguia de estudo
 
-### 5.1 Resumo estruturado
+### 5.1 Ideia central
 
-#### NotebookLM como ferramenta de estudo
+Um AI Agent nao e apenas um prompt com nome. Na pratica, um agente e um sistema que combina:
 
-O NotebookLM funciona como um assistente de pesquisa baseado nas fontes que o usuario adiciona ao caderno. Em vez de depender apenas do conhecimento geral do modelo, ele permite conversar com documentos especificos, pedir resumos, comparar fontes e organizar ideias com citacoes.
-
-Na pratica, isso muda a forma de estudar: o aluno deixa de apenas consumir conteudo e passa a interrogar as fontes de forma ativa.
-
-#### Prompt engineering
-
-Prompt engineering e a pratica de estruturar instrucoes para obter melhores respostas de modelos de IA. Um bom prompt costuma incluir:
-
-- objetivo claro;
-- contexto;
+- um modelo de linguagem;
 - instrucoes;
-- restricoes;
-- exemplos;
-- formato esperado de saida.
+- contexto;
+- ferramentas;
+- memoria ou estado;
+- criterios de validacao;
+- comportamento de execucao;
+- limites de autonomia;
+- logs ou rastreabilidade.
 
-Prompts bons nao sao apenas "perguntas melhores". Eles funcionam como especificacoes de uma tarefa.
+Uma AI Company e uma organizacao de agentes com responsabilidades distribuidas. Ela pode conter agentes para pesquisa, analise, planejamento, execucao, revisao, atendimento, vendas, operacoes, desenvolvimento, qualidade e gestao.
 
-#### Saidas estruturadas
+### 5.2 Diferencas importantes
 
-Em automacoes, muitas vezes uma resposta em texto livre nao e suficiente. Sistemas precisam de dados previsiveis, como JSON, tabelas ou campos padronizados.
+| Conceito | O que e | Quando usar |
+| --- | --- | --- |
+| Chatbot | Interface conversacional simples. | Perguntas e respostas com baixa autonomia. |
+| Workflow | Sequencia explicita de passos. | Processos previsiveis, auditaveis e repetitivos. |
+| Tool | Funcao ou servico chamado pelo agente. | Buscar dados, escrever arquivos, consultar APIs, executar tarefas. |
+| AI Agent | Modelo com instrucoes, ferramentas e comportamento autonomo controlado. | Tarefas abertas, ambiguidade, decisao contextual e uso de ferramentas. |
+| Multi-agent system | Conjunto de agentes especializados que colaboram. | Problemas grandes demais para um unico agente ou com competencias distintas. |
+| AI Company | Metafora organizacional para agentes operando como uma empresa. | Estruturar agentes por funcoes de negocio, com governanca e operacao continua. |
 
-Por isso, saidas estruturadas sao importantes quando a resposta da IA precisa ser usada por outro sistema, API, banco de dados, dashboard ou fluxo automatizado.
+### 5.3 Padroes de arquitetura
 
-Exemplo:
+#### 1. Agente unico com ferramentas
 
-```json
-{
-  "process_name": "Atendimento de chamados",
-  "main_problem": "Atraso na triagem inicial",
-  "detected_steps": ["Recebimento", "Classificacao", "Priorizacao", "Execucao"],
-  "uncertainties": ["Tempo medio por etapa nao informado"]
-}
-```
+Um agente central recebe a tarefa, decide quais ferramentas usar e retorna a resposta.
 
-#### IA aplicada a processos
+Uso ideal:
 
-A IA pode apoiar processos de negocio em tarefas como:
+- MVPs;
+- assistentes pessoais;
+- tarefas com escopo moderado;
+- baixa necessidade de especializacao.
 
-- transformar relatos confusos em estruturas claras;
-- classificar informacoes;
-- resumir documentos;
-- identificar riscos;
-- sugerir proximos passos;
-- gerar relatorios;
-- apoiar analises preliminares.
+Risco:
 
-Mas a IA nao deve substituir validacao humana quando houver impacto operacional, financeiro, juridico ou estrategico relevante.
+- agente acumula responsabilidades demais.
 
-#### Confiabilidade
+#### 2. Manager com agentes como ferramentas
 
-Confiabilidade em IA nao vem apenas de um bom prompt. Ela depende de:
+Um agente orquestrador chama agentes especializados como se fossem ferramentas.
 
-- fontes adequadas;
-- contexto suficiente;
-- exemplos;
-- validacao de saida;
-- regras deterministicas quando necessario;
-- revisao humana;
-- registro de incertezas.
+Uso ideal:
+
+- sistemas com varias competencias;
+- controle centralizado;
+- consolidacao de respostas.
+
+Risco:
+
+- gargalo no orquestrador.
+
+#### 3. Handoffs
+
+Um agente transfere a conversa ou tarefa para outro agente especializado.
+
+Uso ideal:
+
+- atendimento;
+- triagem;
+- dominios com especialistas bem definidos.
+
+Risco:
+
+- perda de controle se os limites de transferencia nao forem claros.
+
+#### 4. Workflow explicito
+
+O fluxo e definido por etapas, condicoes e regras.
+
+Uso ideal:
+
+- processos repetitivos;
+- tarefas com compliance;
+- validacao forte;
+- custos previsiveis.
+
+Risco:
+
+- pouca flexibilidade quando o problema muda.
+
+### 5.4 Exemplo de AI Company MVP
+
+| Agente | Responsabilidade | Entrada | Saida | Criterio de sucesso |
+| --- | --- | --- | --- | --- |
+| Orchestrator Agent | Entender a demanda, escolher fluxo e consolidar resultado. | Pedido do usuario. | Plano de execucao e resposta final. | Tarefa entregue com clareza e sem acao fora da autonomia permitida. |
+| Research Agent | Buscar e sintetizar informacoes confiaveis. | Pergunta de pesquisa. | Resumo com fontes e grau de confianca. | Fontes relevantes e conclusoes separadas de inferencias. |
+| Systems Designer Agent | Desenhar arquitetura, fluxos, schemas e integracoes. | Objetivo do sistema. | Proposta tecnica ou diagrama textual. | Solucao simples, modular e viavel. |
+| Execution Agent | Criar artefatos, arquivos, scripts ou automacoes. | Plano aprovado. | Entregavel funcional. | Entrega testavel e aderente ao escopo. |
+| QA / Guardrail Agent | Revisar qualidade, riscos, consistencia e seguranca. | Entregavel gerado. | Parecer de validacao e ajustes. | Problemas criticos identificados antes do uso real. |
+
+### 5.5 Checklist para criar um agente
+
+Antes de criar um agente, responder:
+
+- Qual problema ele resolve?
+- Esse problema exige agente ou um workflow resolveria melhor?
+- Quais entradas ele recebe?
+- Quais saidas ele deve produzir?
+- Quais ferramentas ele pode usar?
+- Que dados ele pode acessar?
+- O que ele nao pode fazer?
+- Quando deve pedir aprovacao humana?
+- Como sua resposta sera validada?
+- Como erros, incertezas e logs serao registrados?
+
+### 5.6 Checklist para criar uma AI Company
+
+Antes de criar varios agentes:
+
+- Existe um orquestrador ou fluxo principal?
+- Cada agente tem uma funcao diferente e necessaria?
+- Existem contratos claros de comunicacao entre agentes?
+- Os handoffs sao explicitos?
+- Ha separacao entre pesquisa, decisao, execucao e revisao?
+- Existem guardrails por entrada, saida e ferramentas?
+- Ha registro de decisoes?
+- O sistema pode ser depurado?
+- E possivel comecar com menos agentes?
 
 ## 6. Glossario
 
 | Termo | Definicao |
 | --- | --- |
-| LLM | Large Language Model, modelo de linguagem capaz de gerar, resumir, classificar e transformar texto. |
-| Prompt | Instrucao enviada a um modelo de IA. |
-| Prompt engineering | Pratica de estruturar prompts para melhorar qualidade, consistencia e utilidade das respostas. |
-| Few-shot prompting | Tecnica em que exemplos sao fornecidos no prompt para orientar o formato ou raciocinio esperado. |
-| Output estruturado | Resposta organizada em formato previsivel, como JSON, tabela ou schema. |
-| JSON | Formato leve de dados muito usado em APIs e automacoes. |
-| Schema | Estrutura que define quais campos, tipos e regras um output deve seguir. |
-| Alucinacao | Quando a IA gera informacao incorreta ou nao sustentada pelas fontes. |
-| Validacao humana | Revisao feita por uma pessoa para confirmar se a resposta da IA faz sentido. |
-| Regra deterministica | Logica previsivel baseada em regras ou calculos, sem depender de interpretacao probabilistica da IA. |
-| RAG | Retrieval-Augmented Generation, abordagem em que a IA responde usando documentos ou bases de conhecimento recuperadas. |
-| Fonte | Documento, link, PDF ou material usado como base para resposta no NotebookLM. |
+| AI Agent | Sistema baseado em LLM com instrucoes, ferramentas, contexto e comportamento orientado a tarefas. |
+| Tool | Funcao, API, script ou servico que um agente pode chamar para executar uma acao. |
+| Handoff | Transferencia de uma tarefa ou conversa de um agente para outro. |
+| Orchestrator | Agente ou componente responsavel por coordenar fluxos e especialistas. |
+| Guardrail | Validacao ou regra de seguranca aplicada a entrada, saida ou uso de ferramentas. |
+| Workflow | Processo definido por etapas e regras explicitas. |
+| Memory | Informacoes persistentes ou historico usados para manter contexto ao longo do tempo. |
+| State | Estado atual de uma execucao, tarefa ou conversa. |
+| MCP | Model Context Protocol, padrao para conectar modelos a ferramentas e fontes de contexto. |
+| RAG | Retrieval-Augmented Generation, tecnica em que o modelo usa documentos recuperados como contexto. |
+| Structured output | Saida em formato previsivel, como JSON aderente a schema. |
+| Observability | Capacidade de rastrear execucao, chamadas, erros, custos e decisoes do sistema. |
+| Human-in-the-loop | Ponto em que uma pessoa revisa, aprova ou corrige uma acao do agente. |
 
 ## 7. Prompts reutilizaveis
 
-### Prompt para resumo tecnico
+### Prompt para entender um conceito
 
 ```text
-Com base nas fontes selecionadas, crie um resumo tecnico sobre [TEMA]. Separe a resposta em: conceitos principais, aplicacoes praticas, limitacoes e exemplos.
+Com base nas fontes do caderno, explique [CONCEITO] no contexto de AI Agents. Separe: definicao, exemplo pratico, quando usar, quando nao usar e riscos.
 ```
 
-### Prompt para comparacao de conceitos
+### Prompt para desenhar um agente
 
 ```text
-Compare [CONCEITO A] e [CONCEITO B] em uma tabela com: definicao, uso ideal, risco principal, exemplo pratico e criterio de escolha.
+Desenhe um AI Agent para resolver [PROBLEMA]. Inclua: objetivo, entradas, saidas, ferramentas, memoria necessaria, limites de autonomia, guardrails, criterios de sucesso e riscos.
 ```
 
-### Prompt para transformar texto confuso em estrutura
+### Prompt para decidir entre agente e workflow
 
 ```text
-Transforme a descricao abaixo em uma estrutura organizada. Separe fatos extraidos, inferencias, incertezas e perguntas de validacao.
-
-Descricao:
-[INSERIR TEXTO]
+Avalie se [TAREFA] deve ser resolvida com um AI Agent, um workflow explicito ou uma combinacao dos dois. Use criterios de previsibilidade, risco, custo, autonomia, auditabilidade e manutencao.
 ```
 
-### Prompt para gerar JSON preliminar
+### Prompt para desenhar uma AI Company
 
 ```text
-Converta as informacoes abaixo em JSON. Use apenas informacoes presentes no texto. Quando algo nao estiver claro, preencha o campo "uncertainties". Nao invente dados.
-
-Texto:
-[INSERIR TEXTO]
+Proponha uma AI Company MVP para [OBJETIVO]. Limite a no maximo 5 agentes. Para cada agente, defina responsabilidade, entrada, saida, ferramentas, handoffs, guardrails e criterio de sucesso.
 ```
 
-### Prompt para revisar confiabilidade
+### Prompt para revisar arquitetura
 
 ```text
-Revise a resposta anterior como se ela fosse usada em um processo real. Aponte riscos, possiveis alucinacoes, campos sem evidencia, informacoes que precisam de validacao humana e melhorias no formato de saida.
+Revise a arquitetura abaixo como um arquiteto de AI Agents. Aponte excesso de complexidade, agentes desnecessarios, riscos, falhas de handoff, ausencia de guardrails, problemas de memoria e oportunidades de simplificacao.
+
+Arquitetura:
+[INSERIR ARQUITETURA]
 ```
 
-### Prompt para criar plano de estudo
+### Prompt para atualizacao continua
 
 ```text
-Com base nas fontes do caderno, crie um plano de estudo de 7 dias sobre [TEMA], com objetivos diarios, perguntas de revisao e uma atividade pratica por dia.
+Com base nas fontes atuais e em novas fontes que eu adicionar, atualize meu resumo sobre AI Agents. Separe: novidades relevantes, conceitos que mudaram, praticas recomendadas, praticas obsoletas e impactos nos meus projetos.
 ```
 
-## 8. Aprendizados finais
+## 8. Processo de manutencao do caderno
 
-O principal aprendizado deste projeto foi que IA fica muito mais util quando o usuario deixa de fazer perguntas vagas e passa a tratar prompts como pequenas especificacoes de trabalho.
+Para manter o caderno util ao longo do tempo:
 
-Tambem ficou claro que, em automacao de processos, o valor nao esta apenas em gerar texto. O valor aparece quando a IA ajuda a estruturar informacoes, reduzir ambiguidade, apoiar decisoes e produzir saidas que podem ser validadas e reutilizadas.
+- Revisar fontes a cada 15 ou 30 dias.
+- Adicionar documentacoes oficiais antes de artigos opinativos.
+- Registrar data de inclusao de cada fonte.
+- Substituir fontes antigas quando houver mudanca relevante em SDKs, frameworks ou boas praticas.
+- Manter um changelog com decisoes aprendidas.
+- Usar prompts de revisao antes de aplicar conceitos em projetos reais.
 
-Uma boa pratica e pensar em tres camadas:
+## 9. Aprendizados finais
 
-1. **Fonte:** de onde vem a informacao.
-2. **Prompt:** como a pergunta ou tarefa e estruturada.
-3. **Validacao:** como saber se a resposta esta correta, util e segura.
+O principal aprendizado deste projeto foi que agentes de IA devem ser tratados como sistemas operacionais de trabalho, nao apenas como conversas inteligentes.
 
-## 9. Conclusao
+Um bom agente precisa ter papel, limite, ferramenta, memoria, validacao e criterio de sucesso. Uma boa AI Company precisa ter divisao de responsabilidades, orquestracao, governanca e capacidade de evolucao.
 
-Este caderno tematico mostrou que o NotebookLM pode ser usado como ferramenta de estudo ativo, principalmente quando combinado com curadoria de fontes, prompts bem desenhados e registro das dificuldades encontradas.
+Tambem ficou claro que mais agentes nao significa melhor sistema. Muitas vezes, a melhor arquitetura e comecar com um unico agente bem definido, depois evoluir para workflows, handoffs e especialistas conforme a necessidade real aparecer.
 
-Para projetos reais, a principal conclusao e simples: IA nao deve ser tratada como magia, mas como uma camada de raciocinio e transformacao que precisa de contexto, criterio e validacao.
+## 10. Conclusao
+
+Este caderno tematico mostrou como o NotebookLM pode apoiar estudo ativo em um tema tecnico emergente e em constante mudanca.
+
+A partir das fontes selecionadas, foi possivel criar um miniguia pratico para consultar conceitos, revisar arquiteturas e tomar decisoes sobre AI Agents e AI Companies. A principal conclusao e simples: agentes bons nao nascem de prompts bonitos, mas de sistemas bem desenhados.
 

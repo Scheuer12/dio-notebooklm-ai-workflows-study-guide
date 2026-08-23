@@ -1,85 +1,104 @@
 # Prompts e Cicatrizes
 
-Este arquivo registra a engenharia de prompts usada no projeto e os ajustes feitos para melhorar as respostas.
+Este arquivo registra a engenharia de prompts usada no projeto e os ajustes feitos para melhorar as respostas no NotebookLM.
 
-## Prompt 1
+## Prompt 1 - Conceitos iniciais
 
 ```text
-Com base nas fontes selecionadas, explique em linguagem simples como o NotebookLM pode ser usado para estudar IA aplicada a automacao de processos. Organize a resposta em: conceitos principais, aplicacoes praticas e cuidados.
+Com base nas fontes selecionadas, explique o que e um AI Agent na pratica. Diferencie agente, chatbot, workflow, automacao e ferramenta.
 ```
 
 Problema encontrado:
 
-- Resposta clara, mas generica.
-- Pouca conexao com automacao real.
+- A resposta explicou conceitos, mas ainda ficou abstrata.
 
 Prompt ajustado:
 
 ```text
-Agora aprofunde a resposta com foco em uso pratico: considere um profissional que precisa transformar descricoes confusas de processos em fluxos, dados estruturados e decisoes operacionais. Use exemplos concretos.
+Refaca a resposta como se eu fosse desenhar uma pequena empresa composta por agentes de IA. Para cada conceito, mostre: papel, exemplo, entrada, saida e risco principal.
 ```
 
 Aprendizado:
 
-- Contexto de uso melhora a utilidade da resposta.
+- Para estudar arquitetura, exemplos com entrada, saida e risco funcionam melhor do que definicoes soltas.
 
-## Prompt 2
+## Prompt 2 - Agente versus workflow
 
 ```text
-Compare prompt engineering tradicional com o uso de saidas estruturadas, como JSON aderente a schema. Explique quando cada abordagem e suficiente e quando ela passa a ser limitada.
+Compare quando devo usar um agente autonomo e quando devo usar um workflow explicito. Use criterios praticos para tomada de decisao.
 ```
 
 Problema encontrado:
 
-- Resposta boa, mas pouco revisavel.
+- A resposta foi boa, mas nao estava facil de aplicar em projetos.
 
 Prompt ajustado:
 
 ```text
-Inclua uma tabela comparando: uso ideal, risco principal, exemplo pratico e como validar o resultado.
+Transforme a comparacao em uma matriz com: tipo de tarefa, nivel de previsibilidade, autonomia necessaria, risco, exemplo e recomendacao de arquitetura.
 ```
 
 Aprendizado:
 
-- Formatos tabulares ajudam a transformar explicacao em material de estudo.
+- Nem toda tarefa precisa virar agente. Workflows explicitos podem ser melhores para processos previsiveis.
 
-## Prompt 3
+## Prompt 3 - AI Company MVP
 
 ```text
-Imagine que um usuario descreve por voz um processo operacional confuso. Com base nas fontes, proponha um fluxo de IA para transformar essa descricao em dados estruturados, analise preliminar e proximos passos.
+Desenhe uma AI Company simples composta por agentes especializados. Inclua agentes, responsabilidades, ferramentas, memoria, handoffs e pontos de intervencao humana.
 ```
 
 Problema encontrado:
 
-- O fluxo pulava validacoes importantes.
+- A primeira versao criou agentes demais.
 
 Prompt ajustado:
 
 ```text
-Refaca o fluxo incluindo pontos de validacao humana, checagem de campos obrigatorios, tratamento de incertezas e separacao entre fatos extraidos e inferencias da IA.
+Reduza para uma versao MVP com no maximo 5 agentes. Cada agente deve ter uma responsabilidade clara, uma entrada principal, uma saida principal e um criterio de sucesso.
 ```
 
 Aprendizado:
 
-- Em processos reais, resposta bonita nao basta. Validacao e incerteza precisam aparecer.
+- Multi-agent system sem necessidade real vira complexidade decorativa.
 
-## Prompt 4
+## Prompt 4 - Guardrails
 
 ```text
-Usando as fontes sobre risco e boas praticas, liste os principais riscos de usar IA generativa em automacao de processos e proponha mitigacoes praticas.
+Quais guardrails uma AI Company precisa para operar com seguranca? Considere entrada do usuario, saida do agente, chamada de ferramentas e decisoes que exigem aprovacao humana.
 ```
 
 Problema encontrado:
 
-- Riscos apareceram de forma correta, mas abstrata.
+- A resposta misturou politicas, validacoes tecnicas e boas praticas.
 
 Prompt ajustado:
 
 ```text
-Reorganize os riscos em uma tabela operacional com: risco, exemplo em processo real, impacto possivel e mitigacao pratica.
+Organize os guardrails em quatro categorias: input, output, tool-use e human approval. Para cada uma, explique o que validar, quando bloquear e quando escalar para humano.
 ```
 
 Aprendizado:
 
-- Para risco, tabela operacional e melhor que explicacao solta.
+- Guardrails precisam estar ligados a pontos concretos do fluxo.
+
+## Prompt 5 - Atualizacao continua
+
+```text
+Como posso usar este caderno no NotebookLM para me manter atualizado sobre AI Agents e tirar duvidas rapidamente em novos projetos?
+```
+
+Problema encontrado:
+
+- A resposta sugeriu revisoes, mas sem processo claro.
+
+Prompt ajustado:
+
+```text
+Crie um processo de manutencao do caderno com frequencia, tipos de fontes a adicionar, perguntas de revisao, criterios para substituir fontes antigas e formato de changelog.
+```
+
+Aprendizado:
+
+- Um caderno tecnico precisa de manutencao, especialmente em temas que mudam rapido.
 

@@ -4,13 +4,18 @@ Este arquivo registra as fontes abertas escolhidas para alimentar o caderno tema
 
 | # | Fonte | Link | Uso no estudo |
 | --- | --- | --- | --- |
-| 1 | Google NotebookLM Help - Learn about NotebookLM | https://support.google.com/notebooklm/answer/16164461?hl=en | Entender o papel do NotebookLM como assistente de pesquisa baseado em fontes. |
-| 2 | Google NotebookLM Help - Add or discover new sources | https://support.google.com/notebooklm/answer/16215270?hl=en-GB | Entender tipos de fontes aceitos, limites e boas praticas de upload. |
-| 3 | Google Cloud - Prompt design strategies | https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/prompt-design-strategies | Estudar estrutura de prompts, exemplos, contexto, restricoes e iteracao. |
-| 4 | OpenAI - Introducing Structured Outputs in the API | https://openai.com/index/introducing-structured-outputs-in-the-api/ | Entender outputs estruturados aderentes a schema para automacoes. |
-| 5 | NIST AI Risk Management Framework | https://www.nist.gov/itl/ai-risk-management-framework | Apoiar reflexao sobre riscos, confiabilidade e uso responsavel de IA. |
+| 1 | Google NotebookLM Help - Learn about NotebookLM | https://support.google.com/notebooklm/answer/16164461?hl=en | Entender o NotebookLM como ambiente de estudo baseado em fontes. |
+| 2 | OpenAI Agents SDK - Agents | https://openai.github.io/openai-agents-python/agents/ | Entender agentes, ferramentas, handoffs, guardrails e outputs estruturados. |
+| 3 | OpenAI Agents SDK - Guardrails | https://openai.github.io/openai-agents-python/guardrails/ | Estudar validacoes de entrada, saida e uso de ferramentas. |
+| 4 | Google Agent Development Kit - Get started | https://github.com/google/adk-docs/blob/main/docs/get-started/index.md | Entender criacao, gerenciamento, avaliacao e deploy de agentes. |
+| 5 | Microsoft Agent Framework - Overview | https://learn.microsoft.com/en-us/agent-framework/overview/ | Comparar uso de agentes versus workflows e entender orquestracao. |
+| 6 | Microsoft AutoGen - Documentation | https://microsoft.github.io/autogen/dev/ | Referencia sobre single-agent, multi-agent systems, Core, AgentChat, Extensions e MCP. |
 
-## Observacao
+## Criterio de selecao
 
-As fontes foram escolhidas por serem abertas, tecnicas e suficientemente confiaveis para um estudo introdutorio com aplicacao pratica.
+As fontes foram escolhidas por tres criterios:
+
+- serem documentacoes oficiais ou tecnicamente relevantes;
+- tratarem agentes como sistemas, nao apenas como prompts;
+- ajudarem a construir um caderno consultivo para projetos reais de AI Agents e AI Companies.
 
