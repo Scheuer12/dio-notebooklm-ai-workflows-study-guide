@@ -1,6 +1,20 @@
-# Miniguia de Estudos com NotebookLM: Estruturacao de AI Agents and Companies
+# NotebookLM Study Guide: AI Agents and Workflows
 
-Projeto de fim de modulo da DIO usando o NotebookLM como ferramenta de aprendizagem ativa, curadoria de fontes e organizacao do conhecimento.
+**Language:** The complete study guide is written in Portuguese.
+
+This repository documents a DIO module project in which I used NotebookLM
+to curate technical sources and organize practical notes on agent design,
+explicit workflows, orchestration, guardrails, memory, observability, and
+human approval.
+
+It is a learning artifact, not an executable agent system. Its focus is the
+documented study method: source selection, prompt iteration, lessons learned,
+reusable prompts, and architecture checklists.
+
+## Miniguia em português
+
+Projeto de fim de modulo da DIO usando o NotebookLM como ferramenta de
+aprendizagem ativa, curadoria de fontes e organizacao do conhecimento.
 
 ## 1. Contexto e objetivos
 
